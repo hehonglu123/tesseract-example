@@ -13,24 +13,23 @@ omit = [
 
 
 [tool.poetry]
-name = "project-name"
+name = "tesseract_env"
 version = "0.1.0"
 description = "A template Poetry project structure."
 
 packages = [
-    { include = "project_name", from = "src" },
+    { include = "tesseract_env", from = "src" },
 ]
 
-authors = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
-maintainers = ["Lari Liuhamo <lari.liuhamo+pypi@gmail.com>",]
+authors = ["hehonglu123 <hehonglu123@126.com>"]
 
 include = ["CHANGELOG.md", "LICENSE", "py.typed",]
 license = "BSD-3-Clause"
 readme = "README.md"
 
-homepage = "https://pypi.org/project/project-name/"
-repository = "https://github.com/Diapolo10/project-name"
-documentation = "https://github.com/Diapolo10/project-name/tree/main/docs"
+homepage = "https://github.com/hehonglu123/tesseract-python"
+repository = "https://github.com/hehonglu123/tesseract-python"
+documentation = "https://github.com/hehonglu123/tesseract-python"
 
 keywords = [
     "python3",
@@ -52,7 +51,8 @@ classifiers = [
 [tool.poetry.dependencies]
 python = "^3.8.1"
 numpy = "^1.24.4"
-
+tesseract_robotics = "0.4.0"
+tesseract_robotics_viewer = "0.2.5"
 
 [tool.poetry.group.dev.dependencies]
 mypy = "^1.10.0"
@@ -78,8 +78,8 @@ tox-gh-actions = "^3.2.0"
 
 
 [tool.poetry.urls]
-"Tracker" = "https://github.com/Diapolo10/project-name/issues"
-"Changelog" = "https://github.com/Diapolo10/project-name/blob/main/CHANGELOG.md"
+"Tracker" = ""
+"Changelog" = ""
 
 
 [tool.pytest.ini_options]
@@ -191,27 +191,3 @@ max-statements = 80
 
 [tool.ruff.flake8-tidy-imports]
 ban-relative-imports = "all"
-
-
-[tool.tox]
-legacy_tox_ini = """
-[tox]
-envlist = py38, py39, py310, py311, pypy3
-skip_missing_interpreters = true
-
-[gh-actions]
-python =
-    3.8: py38
-    3.9: py39
-    3.10: py310
-    3.11: py311
-    pypy-3.10: pypy3
-
-[testenv]
-passenv = GITHUB_*
-allowlist_externals = poetry
-
-commands =
-    poetry run pytest
-    poetry run coverage report
-"""
