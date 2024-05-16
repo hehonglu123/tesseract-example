@@ -8,9 +8,9 @@ from tesseract_env.gazebo_model_resource_locator import GazeboModelResourceLocat
 
 locator = GeneralResourceLocator()
 env = Environment()
-with open("src/tesseract_env/config/cell.urdf",'r') as f:
+with open("src/tesseract_env/config/motoman_cell.urdf",'r') as f:
     combined_urdf = f.read()
-with open("src/tesseract_env/config/cell.srdf",'r') as f:
+with open("src/tesseract_env/config/motoman_cell.srdf",'r') as f:
     combined_srdf = f.read()
 
 assert env.init(combined_urdf, combined_srdf, GazeboModelResourceLocator())
@@ -33,7 +33,7 @@ print("Translation: " + str(tool0_transform.translation().flatten()))
 print(f"Rotation: {q.w()} {q.x()} {q.y()} {q.z()}")
 
 # Solve inverse kinematics at a specific tool0 pose
-tool0_transform2 = Isometry3d.Identity() * Translation3d(0.7, -0.1, 1) * Quaterniond(0.70711, 0, 0.7171, 0)
+tool0_transform2 = Isometry3d.Identity() * Translation3d(0.5, -0.1, 0.) * Quaterniond(0.70711, 0, 0.7171, 0)
 
 # Create a KinGroupIKInput and KinGroupIKInputs object. The KinGroupIKInputs object is a list of KinGroupIKInput
 ik = KinGroupIKInput()

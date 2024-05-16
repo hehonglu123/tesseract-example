@@ -1,4 +1,5 @@
 from tesseract_env import Tess_Env
+from general_robotics_toolbox import rot
 import numpy as np
 
 def main():
@@ -17,7 +18,7 @@ def main():
 	robot_jointname={'MA2010':MA2010_joint_names,'MA1440':MA1440_joint_names,'D500B':D500B_joint_names}
 	
 	t=Tess_Env('config/','motoman_cell',robot_linkname,robot_jointname)				#create obj
-	t.plan_p2p_js('MA2010',np.zeros(6),np.ones(6))
+	t.plan_p2p_cs('MA2010',np.zeros(6),np.array([500., -100., 0.]),rot(np.array([0,1,0]),np.pi/2))
 
 	
 	input("Press enter to quit")
