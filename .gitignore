@@ -188,3 +188,5 @@ dmypy.json
 cython_debug/
 
 docs/readme.md
+
+*.lock

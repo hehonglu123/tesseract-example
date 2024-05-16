@@ -17,9 +17,17 @@ def main():
 	robot_jointname={'MA2010_A0':MA2010_joint_names,'MA1440_A0':MA1440_joint_names,'D500B':D500B_joint_names}
 	
 	t=Tess_Env('config/',robot_linkname,robot_jointname)				#create obj
-	t.viewer_trajectory(['MA2010_A0'], np.linspace(np.zeros(6),np.ones(6),100))	#visualize trajectory
+	q1=np.array([-0.1,0.5,0.5,0.,0.,0.])
+	q2=np.array([-0.1,0.5,0.5,0.,0.,0.])
+	t.viewer_joints_update(['MA2010_A0','MA1440_A0'],np.hstack((q1,q2)))
+	
+	
+	print(t.check_collision(['MA2010_A0','MA1440_A0'],[q1,q2]))
+
 
 	input("Press enter to quit")
+
+
 
 if __name__ == '__main__':
 	main()

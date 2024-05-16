@@ -25,6 +25,20 @@
     <origin rpy="0.0 0.0 3.14159" xyz="2.689552 -0.39515 0.908"/><!--MA1440 pedestal-->
   </joint>
 
+  <link name="MA2010_tool0"/>
+  <joint name="MA2010_joint_6_t-tool0" type="fixed">
+    <origin rpy="0 0 0" xyz="0.100 0 0"/>
+    <parent link="MA2010_link_6_t"/>
+    <child link="MA2010_tool0"/>
+  </joint>
+
+  <link name="MA1440_tool0"/>
+  <joint name="MA1440_joint_6_t-tool0" type="fixed">
+    <origin rpy="0 0 0" xyz="0.100 0 0"/>
+    <parent link="MA1440_link_6_t"/>
+    <child link="MA1440_tool0"/>
+  </joint>
+
   <link name="Ground">
     <visual>
       <geometry>

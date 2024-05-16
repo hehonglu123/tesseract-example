@@ -17,9 +17,12 @@ def main():
 	robot_jointname={'MA2010_A0':MA2010_joint_names,'MA1440_A0':MA1440_joint_names,'D500B':D500B_joint_names}
 	
 	t=Tess_Env('config/',robot_linkname,robot_jointname)				#create obj
-	t.viewer_trajectory(['MA2010_A0'], np.linspace(np.zeros(6),np.ones(6),100))	#visualize trajectory
+	t.plan_js('MA2010_A0',np.zeros(6),np.ones(6))
 
+	
 	input("Press enter to quit")
+
+
 
 if __name__ == '__main__':
 	main()
