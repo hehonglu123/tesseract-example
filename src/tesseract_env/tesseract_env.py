@@ -144,6 +144,7 @@ class Tess_Env(object):
 		# Run the task and wait for completion
 		future = task_executor.run(self.task.get(), task_planning_problem)
 		future.wait()
+		print(future.context.isSuccessful())
 
 		# Retrieve the output, converting the AnyPoly back to a CompositeInstruction
 		results = AnyPoly_as_CompositeInstruction(future.context.data_storage.getData(self.output_key))

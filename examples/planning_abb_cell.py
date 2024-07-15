@@ -13,7 +13,7 @@ def main():
 	robot_jointname={'ABB_6640_180_255':ABB_6640_180_255_joint_names,'ABB_1200_5_90':ABB_1200_5_90_joint_names}
 	
 	t=Tess_Env('config/','abb_cell',robot_linkname,robot_jointname)				#create obj
-	t.plan_p2p_js('ABB_6640_180_255',np.zeros(6),0.2*np.ones(6))
+	t.plan_p2p_js('ABB_6640_180_255',np.zeros(6),1*np.ones(6))
 
 	
 	input("Press enter to quit")

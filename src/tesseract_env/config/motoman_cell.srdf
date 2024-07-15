@@ -5,7 +5,7 @@
 -->
 <robot name="combined">
     <!--Groups kinematic plugins -->
-    <kinematics_plugin_config filename="model://MA_2010_A0/ma2010_plugins.yaml"/>
+    <kinematics_plugin_config filename="model://MA_2010_A0/motoman_plugins.yaml"/>
     <!--Contact Managers plugins -->
     <contact_managers_plugin_config filename="model://MA_2010_A0/contact_manager_plugins.yaml"/>
     <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
